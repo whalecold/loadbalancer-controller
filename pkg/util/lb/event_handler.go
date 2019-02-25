@@ -106,7 +106,6 @@ func (eh *EventHandlerForDeployment) OnAdd(obj interface{}) {
 	}
 	log.Info("Orphan Deployment added", log.Fields{"d.name": d.Name})
 	eh.queue.Enqueue(lb)
-
 }
 
 // OnUpdate ...

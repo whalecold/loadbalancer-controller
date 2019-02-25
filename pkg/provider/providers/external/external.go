@@ -87,7 +87,6 @@ func (f *external) Run(stopCh <-chan struct{}) {
 }
 
 func (f *external) OnSync(lb *lbapi.LoadBalancer) {
-
 	log.Info("Syncing providers, triggered by lb controller", log.Fields{"lb": lb.Name, "namespace": lb.Namespace})
 	f.queue.Enqueue(lb)
 }

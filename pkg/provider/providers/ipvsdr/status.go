@@ -26,7 +26,7 @@ import (
 	stringsutil "github.com/caicloud/loadbalancer-controller/pkg/util/strings"
 
 	appsv1 "k8s.io/api/apps/v1"
-	"k8s.io/api/core/v1"
+	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -97,7 +97,6 @@ func (f *ipvsdr) syncStatus(lb *lbapi.LoadBalancer, activeDeploy *appsv1.Deploym
 			log.Error("Update loadbalancer status error", log.Fields{"err": err})
 			return err
 		}
-
 	}
 	return nil
 }

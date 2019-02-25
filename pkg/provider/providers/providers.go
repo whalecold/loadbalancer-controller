@@ -21,4 +21,6 @@ import (
 	_ "github.com/caicloud/loadbalancer-controller/pkg/provider/providers/ipvsdr"
 	// external proxy
 	_ "github.com/caicloud/loadbalancer-controller/pkg/provider/providers/external"
+	// azure provider
+	_ "github.com/caicloud/loadbalancer-controller/pkg/provider/providers/azure"
 )

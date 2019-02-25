@@ -80,6 +80,7 @@ type ProxyNginx struct {
 // Providers contains all cli flags of providers
 type Providers struct {
 	Ipvsdr ProviderIpvsdr
+	Azure  ProviderAzure
 }
 
 // ProviderIpvsdr contains all cli flags of ipvsdr providers
@@ -87,6 +88,11 @@ type ProviderIpvsdr struct {
 	Image            string
 	NodeIPLabel      string
 	NodeIPAnnotation string
+}
+
+// ProviderAzure contains all cli flags of azure providers
+type ProviderAzure struct {
+	Image string
 }
 
 // AddFlags add flags to app

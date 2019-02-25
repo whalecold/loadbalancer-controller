@@ -27,7 +27,7 @@ import (
 	"github.com/caicloud/clientset/util/status"
 	"github.com/caicloud/loadbalancer-controller/pkg/api"
 
-	"k8s.io/api/core/v1"
+	v1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/util/wait"
 )
 
@@ -165,9 +165,10 @@ func RandStringBytesRmndr(n int) string {
 
 // ComputePodStatus computes the pod's current status
 func ComputePodStatus(pod *v1.Pod) lbapi.PodStatus {
-	s := status.JudgePodStatus(pod)
+	s := status.JudgePodStatus(pod, nil)
 	return lbapi.PodStatus{
-		Name:            s.Name,
+		//TODO
+		// Name:            s.Name,
 		Ready:           s.Ready,
 		NodeName:        s.NodeName,
 		ReadyContainers: s.ReadyContainers,
